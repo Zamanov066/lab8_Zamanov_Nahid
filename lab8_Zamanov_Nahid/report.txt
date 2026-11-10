@@ -1,0 +1,84 @@
+LABORATORIYA İŞİ № 8: FUNKSİYALAR - HESABAT
+Tələbə: Nahid Zamanov   Qrup: ___1____   Tarix: ___10.11.26_____
+
+==================================================
+HİSSƏ A: PROQNOZ VƏ İZAH
+==================================================
+A1. Proqnoz:
+Salam, Aysel!
+Xosh gəldin, Kamran!
+Sabahınız xeyir, Nigar!
+Nəticə: Proqnozla eyni oldu. Üçüncü çağırışda açar sözlü arqumentlər olduğu üçün
+sıra əhəmiyyətsizdir, name="Nigar", greeting="Sabahınız xeyir" düzgün yerinə düşür.
+
+A2. Proqnoz:
+16
+16
+None
+Nəticə: Proqnozla eyni oldu. Sıra: b = show_square(4) çağırılanda funksiya daxilində
+print(n * n) işləyir və ilk 16 çap olunur. Sonra print(a) ikinci 16-nı, print(b) isə None çap edir.
+Əlavə sual: b niyə None alır? show_square heç nə qaytarmır (return yoxdur), Python belə
+funksiyalar üçün avtomatik None qaytarır. square qiyməti return ilə geri verir, ona görə
+nəticəni dəyişənə yazıb sonra istifadə etmək olur. show_square isə yalnız ekrana yazır,
+qiymət proqrama qayıtmır.
+
+A3. Proqnoz:
+['bread', 'milk']
+['bread', 'milk', 'cheese']
+Nəticə: Proqnozla eyni oldu. add_item orijinal basket listini dəyişdi (milk əlavə olundu).
+add_item_copy isə items[:] ilə kopya yaratdı, cheese yalnız kopyaya əlavə olundu və
+basket-də cheese yoxdur.
+
+==================================================
+TAPŞIRIQ 1
+==================================================
+Funksiyanı iki arqumentlə çağırdıqda alınan xəta mesajı:
+TypeError: print_student_card() missing 1 required positional argument: 'year'
+İzah: Funksiya üç parametr tələb edir, mən yalnız ikisini verdim, ona görə Python
+çatışmayan "year" arqumentini tələb edir.
+
+==================================================
+TAPŞIRIQ 2
+==================================================
+Sual: Default qiyməti olan parametr niyə default-u olmayan parametrlərdən sonra yazılmalıdır?
+Cavab: Python arqumentləri mövqeyə görə parametrlərə təyin edir. Default-lu parametr
+əvvəl gəlsə, ondan sonrakı məcburi parametrə qiymətin necə veriləcəyi qeyri-müəyyən olar,
+ona görə Python bunu SyntaxError kimi qəbul edir.
+
+==================================================
+TAPŞIRIQ 5
+==================================================
+Çıxış:
+[80, 100, 98, 100]
+[70, 95, 88, 100]
+[70, 95, 88, 100]
+[80, 100, 98, 100]
+Izah:
+1-ci sətir: with_bonus bonus əlavə edilmiş YENİ list qaytarır, 95+10 və 100+10 100-ü
+keçdiyi üçün 100 olur.
+2-ci sətir: with_bonus orijinalı dəyişmir, ona görə scores əvvəlki kimi qalır.
+3-cü sətir: add_bonus(scores[:], 10) funksiyaya listin kopyasını göndərir. Funksiya kopyanı
+dəyişir, orijinal scores dəyişmir.
+4-cü sətir: add_bonus(scores, 10) orijinal listi göndərir, funksiya onu yerində dəyişir.
+scores[:] listin tam kopyasını (slice) yaradır, yəni yeni və ayrıca list alınır.
+
+==================================================
+TAPŞIRIQ 7
+==================================================
+Sual: from utils import * yazmaq niyə tövsiyə olunmur?
+Cavab: Bütün adlar birbaşa proqrama daxil olur, bu zaman mənim öz dəyişən və funksiya
+adlarımla toqquşa bilər (biri digərini əzə bilər). Həmçinin koddan hansı funksiyanın
+hansı moduldan gəldiyi aydın görünmür.
+
+==================================================
+TAPŞIRIQ 8: XƏTALAR CƏDVƏLİ
+==================================================
+| № | Xətanın növü                          | Harada                          | Necə düzəldildi                                              |
+| 1 | SyntaxError (iki nöqtə yoxdur)        | def calculate_total(...)        | Sətrin sonuna : əlavə olundu                                 |
+| 2 | SyntaxError (default-lu param əvvəldə)| def describe_order(...)         | city, country="Azerbaijan"-dan əvvələ keçirildi              |
+| 3 | Məntiq xətası (print, return yox)     | calculate_total sonunda         | print(total) əvəzinə return total yazıldı                    |
+| 4 | TypeError (customer iki dəfə verilib) | describe_order("Baku", customer="Ali") | describe_order(customer="Ali", city="Baku") yazıldı   |
+
+==================================================
+BONUS: Mini layihə - bonus_journal.py faylındadır.
+==================================================
