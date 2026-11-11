@@ -6,11 +6,5 @@ def print_student_card(name, group, year):
 
 
 # Positional arguments
-print_student_card("Aysel Mammadova", "CE-101", 1)
+print_student_card(name=input("Enter name:"),group=input("Enter your group:"),year=input("Enter year:"))
 
-# Keyword arguments (order changed)
-print_student_card(year=2, name="Kamran Aliyev", group="CE-201")
-
-# Deliberate error (commented out):
-# print_student_card("Aysel", "CE-101")
-# TypeError: print_student_card() missing 1 required positional argument: 'year'
